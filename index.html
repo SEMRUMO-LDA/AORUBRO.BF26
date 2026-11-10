@@ -211,6 +211,28 @@ footer img { display: block; height: 14px; width: auto; }
 .disco-leg { font-size: 5cqw; }
 .bloco.para .tag { font-size: 1.1rem; line-height: 1.35; max-width: 30ch; }
 .pergunta { font-size: 1.2rem; line-height: 1.35; max-width: 28ch; }
+/* Rodapé institucional, igual ao do site */
+footer { padding-top: 40px; }
+footer .wrap { display: block; }
+.inst { border: 1px solid var(--linha); border-radius: 24px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; margin-bottom: 32px; }
+footer .inst-img { width: min(360px, 100%); height: auto; }
+.inst p { margin: 0; max-width: 62ch; }
+.inst strong, .legal strong { color: var(--papel); font-weight: 600; }
+.legal { border-top: 1px solid var(--linha); padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.legal p { margin: 0; }
+.legal-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.legal-links a { color: var(--papel); text-decoration: none; }
+.legal-links a:hover, .legal-marca:hover { text-decoration: underline; text-underline-offset: 3px; }
+.legal-marca { text-decoration: none; }
+/* Revisão: algarismos alinhados no destaque, quebras equilibradas, rodapé no telemóvel */
+.display em, .fita em { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; font-size: 1.08em; }
+.pergunta, .aviso-sug, .capa .lead, .bloco.para .tag { text-wrap: balance; }
+.fecho-bg::before { right: -210px; top: -210px; }
+footer { border-top: 0; }
+@media (max-width: 640px) {
+  .legal-links { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .legal-links span[aria-hidden] { display: none; }
+}
 </style>
 </head>
 <body>
@@ -311,8 +333,13 @@ footer img { display: block; height: 14px; width: auto; }
 
 <footer>
   <div class="wrap">
-    <img src="logo-aorubro-branco.png" alt="AORUBRO" width="700" height="98">
-    <span>Agência de comunicação 360.º</span>
+    <div class="inst">
+      <img class="inst-img" src="https://aorubro.pt/performance/assets/financiamento-prr-ue.png" alt="Plano de Recuperação e Resiliência (PRR), República Portuguesa e Financiado pela União Europeia NextGenerationEU" width="360" loading="lazy">
+    </div>
+    <div class="legal">
+      <p>Todos os direitos estão reservados 2026 © <a class="legal-marca" href="https://aorubro.pt/"><strong>AORUBRO</strong></a> • AuRubro, Marketing e Publicidade Unipessoal Lda.</p>
+      <p class="legal-links"><a href="https://aorubro.pt/politica-de-privacidade/">Política de Privacidade &amp; Cookies</a><span aria-hidden="true">•</span><a href="https://www.livroreclamacoes.pt/Inicio/">Livro de Reclamações Online</a><span aria-hidden="true">•</span><span>Albufeira, Algarve – Portugal</span></p>
+    </div>
   </div>
 </footer>
 
@@ -468,6 +495,13 @@ footer img { display: block; height: 14px; width: auto; }
       cur.style.transform = "translate(" + cx + "px," + cy + "px)";
       requestAnimationFrame(seguir);
     })();
+  }
+
+  // Se a imagem dos logótipos de financiamento não carregar, esconde a caixa
+  var pi = document.querySelector(".inst-img");
+  if (pi) {
+    pi.addEventListener("error", function () { pi.parentElement.hidden = true; });
+    if (pi.complete && !pi.naturalWidth) pi.parentElement.hidden = true;
   }
 
   var fixa = $("fixa");
