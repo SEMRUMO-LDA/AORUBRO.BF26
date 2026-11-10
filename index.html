@@ -229,8 +229,11 @@ footer .inst-img { width: min(360px, 100%); height: auto; }
 .pergunta, .aviso-sug, .capa .lead, .bloco.para .tag { text-wrap: balance; }
 .fecho-bg::before { right: -210px; top: -210px; }
 footer { border-top: 0; }
+.legal { border-top: 0; padding-top: 0; text-align: center; align-items: center; }
+.legal-links { justify-content: center; }
+footer { border-top: 1px solid var(--linha); padding-top: 32px; }
 @media (max-width: 640px) {
-  .legal-links { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .legal-links { flex-direction: column; align-items: center; gap: 8px; }
   .legal-links span[aria-hidden] { display: none; }
 }
 </style>
@@ -333,9 +336,6 @@ footer { border-top: 0; }
 
 <footer>
   <div class="wrap">
-    <div class="inst">
-      <img class="inst-img" src="https://aorubro.pt/performance/assets/financiamento-prr-ue.png" alt="Plano de Recuperação e Resiliência (PRR), República Portuguesa e Financiado pela União Europeia NextGenerationEU" width="360" loading="lazy">
-    </div>
     <div class="legal">
       <p>Todos os direitos estão reservados 2026 © <a class="legal-marca" href="https://aorubro.pt/"><strong>AORUBRO</strong></a> • AuRubro, Marketing e Publicidade Unipessoal Lda.</p>
       <p class="legal-links"><a href="https://aorubro.pt/politica-de-privacidade/">Política de Privacidade &amp; Cookies</a><span aria-hidden="true">•</span><a href="https://www.livroreclamacoes.pt/Inicio/">Livro de Reclamações Online</a><span aria-hidden="true">•</span><span>Albufeira, Algarve – Portugal</span></p>
@@ -495,13 +495,6 @@ footer { border-top: 0; }
       cur.style.transform = "translate(" + cx + "px," + cy + "px)";
       requestAnimationFrame(seguir);
     })();
-  }
-
-  // Se a imagem dos logótipos de financiamento não carregar, esconde a caixa
-  var pi = document.querySelector(".inst-img");
-  if (pi) {
-    pi.addEventListener("error", function () { pi.parentElement.hidden = true; });
-    if (pi.complete && !pi.naturalWidth) pi.parentElement.hidden = true;
   }
 
   var fixa = $("fixa");
