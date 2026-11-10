@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Black Friday AORUBRO: contrate qualquer serviço e receba 15% do valor em crédito para o serviço seguinte.">
+<style>html{padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Black Friday AORUBRO</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: faixas a toda a largura que alternam amarelo e preto, como um outdoor; o amarelo enche a capa e o fecho, o preto segura o conteúdo. */
+:root {
+  color-scheme: dark;
+  --amarelo: #FFD400;
+  --amarelo-escuro: #E6BD00;
+  --preto: #0C0C0A;
+  --carvao: #1A1A16;
+  --linha: #34342C;
+  --papel: #F7F4E6;
+  --cinza: #A9A693;
+  --display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --texto: "Figtree", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { background: var(--preto); color: var(--papel); font-family: var(--texto); font-size: 17px; line-height: 1.55; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.band { padding-block: clamp(56px, 9vw, 112px); }
+.amarela { background: var(--amarelo); color: var(--preto); }
+.carvao { background: var(--carvao); }
+.display { font-family: var(--display); font-stretch: 112%; font-weight: 900; text-transform: uppercase; line-height: .96; letter-spacing: -.01em; text-wrap: balance; overflow-wrap: anywhere; }
+.eyebrow { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+.amarelo-txt { color: var(--amarelo); }
+h2.display { font-size: clamp(2rem, 5vw, 3.6rem); }
+.lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); max-width: 60ch; }
+.muted { color: var(--cinza); }
+.stack { display: flex; flex-direction: column; gap: 20px; }
+.stack-lg { display: flex; flex-direction: column; gap: clamp(32px, 5vw, 56px); }
+
+.btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-stretch: 112%; font-weight: 800; font-size: .92rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 16px 26px; border: 2px solid var(--preto); background: var(--preto); color: var(--amarelo); cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--papel); }
+.btn.inv { background: var(--amarelo); color: var(--preto); border-color: var(--amarelo); }
+.btn.inv:hover { box-shadow: 4px 4px 0 var(--papel); }
+.btn:focus-visible, .tab:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--papel); outline-offset: 3px; }
+.amarela .btn:focus-visible { outline-color: var(--preto); }
+
+.btn { border-radius: 999px; }
+.selo, .painel, form { border-radius: 24px; }
+.painel .ponte { border-radius: 999px; padding: 8px 16px; }
+.tab { border-radius: 12px; }
+form input, form select, form textarea { border-radius: 12px; }
+@media (max-width: 820px) { .tab { border-radius: 999px; padding: 10px 14px; } }
+
+/* Capa */
+.topo { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; flex-wrap: wrap; }
+.barra { background: var(--papel); color: var(--preto); }
+.topo { padding-block: 14px; }
+.marca { display: inline-flex; align-items: center; }
+.marca img { display: block; height: 22px; width: auto; }
+.topo .btn { padding: 10px 16px; font-size: .78rem; }
+.topo .btn:hover { box-shadow: 4px 4px 0 var(--amarelo); }
+.barra .btn:focus-visible { outline-color: var(--preto); }
+.aviso-sug { border-left: 4px solid var(--amarelo); padding: 4px 0 4px 16px; font-weight: 600; max-width: 60ch; }
+.fixa { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--preto); border-top: 2px solid var(--amarelo); padding-top: 10px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.fixa .btn { width: 100%; justify-content: center; padding: 14px 16px; }
+form .full { grid-column: 1 / -1; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: end; padding-block: clamp(28px, 6vw, 72px) clamp(56px, 8vw, 96px); }
+.hero h1 { font-size: clamp(2.6rem, 7.4vw, 5.6rem); }
+.hero .lead { font-weight: 500; }
+.selo { background: var(--preto); color: var(--amarelo); padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 6px; transform: rotate(-2deg); }
+.selo .num { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(4.5rem, 11vw, 8.5rem); line-height: .85; letter-spacing: -.03em; }
+.selo .leg { font-family: var(--display); font-stretch: 112%; font-weight: 800; text-transform: uppercase; font-size: 1.05rem; line-height: 1.15; color: var(--papel); }
+.selo .nota { font-size: .9rem; color: var(--cinza); }
+.acoes { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+.acoes .lnk { font-weight: 700; text-underline-offset: 4px; }
+
+/* Faixa em movimento */
+.fita { background: var(--preto); border-block: 2px solid var(--amarelo); overflow: hidden; padding-block: 14px; }
+.fita-in { display: flex; width: max-content; animation: correr 28s linear infinite; }
+.fita span { font-family: var(--display); font-stretch: 125%; font-weight: 900; text-transform: uppercase; font-size: 1.05rem; letter-spacing: .08em; color: var(--amarelo); padding-right: 40px; white-space: nowrap; }
+.fita span b { color: var(--papel); font-weight: 900; }
+@keyframes correr { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .fita-in { animation: none; } .btn { transition: none; } }
+
+/* Como funciona */
+.passos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--papel); list-style: none; padding: 0; margin: 0; }
+.passos li { padding: 28px 28px 8px 0; display: flex; flex-direction: column; gap: 12px; }
+.passos li + li { padding-left: 28px; border-left: 1px solid var(--linha); }
+.passos .n { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 3.2rem; line-height: 1; color: var(--amarelo); font-variant-numeric: tabular-nums; }
+.passos h3 { font-family: var(--display); font-stretch: 112%; font-weight: 800; text-transform: uppercase; font-size: 1.25rem; line-height: 1.1; }
+
+/* Combinações */
+.combos { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
+.tabs { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--linha); }
+.tab { font: inherit; font-family: var(--display); font-stretch: 112%; font-weight: 700; text-transform: uppercase; font-size: .95rem; letter-spacing: .04em; text-align: left; color: var(--cinza); background: none; border: 0; border-bottom: 1px solid var(--linha); padding: 15px 14px; cursor: pointer; display: flex; justify-content: space-between; gap: 12px; }
+.tab:hover { color: var(--papel); }
+.tab[aria-selected="true"] { background: var(--amarelo); color: var(--preto); }
+.tab[aria-selected="true"]::after { content: "→"; }
+.painel { background: var(--preto); border: 2px solid var(--amarelo); padding: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.painel .nome { font-size: clamp(1.9rem, 4.6vw, 3.4rem); }
+.painel .ponte { align-self: flex-start; background: var(--amarelo); color: var(--preto); font-family: var(--display); font-stretch: 112%; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; font-size: .95rem; padding: 8px 14px; }
+.painel .frases { border-top: 1px solid var(--linha); padding-top: 22px; display: flex; flex-direction: column; gap: 6px; max-width: 56ch; }
+.painel .frases strong { font-weight: 700; }
+.painel .rodape { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; }
+.painel .rodape p { font-size: .92rem; }
+
+/* Condições */
+.cond { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.cond dl { margin: 0; border-top: 2px solid var(--papel); }
+.cond dl div { display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr); gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--linha); }
+.cond dt { font-family: var(--display); font-stretch: 112%; font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: .1em; color: var(--amarelo); padding-top: 3px; }
+.cond dd { margin: 0; }
+
+/* Fecho + formulário */
+.fecho { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.fecho h2 { font-size: clamp(2.2rem, 5.4vw, 4rem); }
+.fecho .pergunta { font-family: var(--display); font-stretch: 112%; font-weight: 800; text-transform: uppercase; font-size: 1.2rem; line-height: 1.15; }
+form { background: var(--preto); color: var(--papel); padding: clamp(22px, 3vw, 36px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.campo { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.campo.full { grid-column: 1 / -1; }
+label { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--amarelo); }
+input, select, textarea { font: inherit; color: var(--papel); background: var(--carvao); border: 1px solid var(--linha); border-radius: 0; padding: 12px 14px; width: 100%; }
+textarea { min-height: 96px; resize: vertical; }
+form .btn { justify-content: center; }
+form .peq { font-size: .82rem; color: var(--cinza); }
+.ok { background: var(--preto); color: var(--papel); padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 14px; border: 2px solid var(--preto); }
+.ok h3 { font-family: var(--display); font-stretch: 112%; font-weight: 900; text-transform: uppercase; font-size: 1.7rem; line-height: 1; color: var(--amarelo); }
+.ok .aviso { font-size: .85rem; color: var(--cinza); border-top: 1px solid var(--linha); padding-top: 14px; }
+
+footer { padding-block: 28px; font-size: .85rem; color: var(--cinza); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+@media (max-width: 820px) {
+  .hero, .combos, .cond, .fecho { grid-template-columns: minmax(0, 1fr); }
+  .selo { transform: none; }
+  .passos { grid-template-columns: minmax(0, 1fr); }
+  .passos li, .passos li + li { padding: 22px 0; border-left: 0; border-bottom: 1px solid var(--linha); flex-direction: row; gap: 18px; align-items: flex-start; }
+  .passos .n { font-size: 2.4rem; min-width: 1.3em; }
+  .tabs { flex-direction: row; flex-wrap: wrap; gap: 8px; border-top: 0; }
+  .tab { border: 1px solid var(--linha); padding: 10px 12px; font-size: .8rem; }
+  .tab[aria-selected="true"]::after { content: none; }
+  .fixa { display: block; }
+  footer { padding-bottom: 104px; }
+  .hero { gap: 28px; }
+  .acoes .btn { width: 100%; justify-content: center; }
+  .painel .rodape .btn { width: 100%; justify-content: center; }
+}
+#f-enviar { justify-content: center; text-align: center; }
+.nowrap { white-space: nowrap; }
+@media (max-width: 820px) {
+  .band { padding-block: 48px; }
+  .stack-lg { gap: 28px; }
+  .hero { padding-block: 28px 44px; }
+  .hero .lead { font-size: 1.15rem; line-height: 1.45; }
+  .selo { flex-direction: row; align-items: center; gap: 16px; padding: 16px 22px; border-radius: 20px; }
+  .selo .num { font-size: 3.5rem; }
+  .selo .leg { font-size: .92rem; }
+  .topo .btn { min-height: 44px; }
+  .tab { min-height: 44px; align-items: center; font-size: .82rem; }
+  .painel { gap: 18px; padding: 22px; }
+  .painel .frases { padding-top: 18px; }
+  .fecho { gap: 28px; }
+  form { padding: 20px; border-radius: 20px; }
+  input, select, textarea { min-height: 48px; }
+}
+@media (max-width: 520px) {
+  form { grid-template-columns: minmax(0, 1fr); }
+  .cond dl div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+
+/* Refinamento: escala contida, tipografia mais fina, menos peso */
+body { font-size: 16px; }
+.display { font-stretch: 100%; font-weight: 800; text-transform: none; letter-spacing: -.025em; line-height: 1.04; }
+.eyebrow { font-stretch: 100%; font-weight: 600; font-size: .7rem; letter-spacing: .14em; }
+.hero h1 { font-size: clamp(2.1rem, 6vw, 4.4rem); }
+h2.display, .fecho h2 { font-size: clamp(1.6rem, 3.6vw, 2.6rem); }
+.lead { font-size: clamp(1rem, 1.4vw, 1.125rem); }
+.btn { font-family: var(--texto); font-stretch: 100%; font-weight: 600; font-size: .9rem; letter-spacing: 0; text-transform: none; padding: 11px 20px; border-width: 1px; white-space: nowrap; transition: opacity .15s ease; }
+.btn:hover, .btn.inv:hover, .topo .btn:hover { transform: none; box-shadow: none; opacity: .85; }
+.topo { flex-wrap: nowrap; padding-block: 12px; }
+.topo .btn { padding: 8px 14px; font-size: .82rem; min-height: 0; }
+.marca img { height: 18px; }
+.selo { transform: none; padding: 20px 24px; }
+.selo .num { font-stretch: 100%; font-weight: 800; font-size: clamp(2.6rem, 7vw, 5.5rem); letter-spacing: -.04em; }
+.selo .leg { font-family: var(--texto); font-weight: 600; text-transform: none; font-size: .95rem; line-height: 1.3; }
+.fita { padding-block: 9px; border-block-width: 1px; }
+.fita span { font-stretch: 100%; font-weight: 700; font-size: .72rem; letter-spacing: .14em; }
+.passos { border-top-width: 1px; }
+.passos .n { font-stretch: 100%; font-weight: 700; font-size: 1.5rem; }
+.passos h3 { font-family: var(--texto); font-weight: 700; text-transform: none; font-size: 1.05rem; line-height: 1.25; }
+.tab { font-family: var(--texto); font-stretch: 100%; font-weight: 500; text-transform: none; letter-spacing: 0; font-size: .9rem; }
+.painel { border-width: 1px; }
+.painel .nome { font-size: clamp(1.5rem, 3.4vw, 2.4rem); }
+.painel .ponte { font-family: var(--texto); font-weight: 600; text-transform: none; letter-spacing: 0; font-size: .8rem; padding: 5px 12px; white-space: nowrap; }
+.fecho .pergunta { font-family: var(--texto); font-weight: 600; text-transform: none; font-size: 1.05rem; line-height: 1.35; }
+label { font-family: var(--texto); font-weight: 600; font-size: .7rem; letter-spacing: .08em; }
+.aviso-sug { border-left-width: 2px; font-weight: 500; font-size: .95rem; }
+.fixa { border-top-width: 1px; padding-top: 8px; padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)); }
+.fixa .btn { padding: 11px 16px; }
+@media (max-width: 820px) {
+  .band { padding-block: 40px; }
+  .hero .lead { font-size: 1.05rem; }
+  .acoes .btn, .painel .rodape .btn { width: auto; }
+  .selo { padding: 14px 20px; }
+  .selo .num { font-size: 2.4rem; }
+  .selo .leg { font-size: .88rem; }
+  .passos li, .passos li + li { padding: 18px 0; gap: 14px; }
+  .passos .n { font-size: 1.3rem; min-width: 1.1em; line-height: 1.3; }
+  .tab { min-height: 38px; padding: 7px 14px; font-size: .85rem; }
+  .topo .btn { min-height: 0; }
+  input, select, textarea { min-height: 44px; padding: 10px 12px; }
+  footer { padding-bottom: 84px; }
+}
+.selo { background: none; color: var(--preto); padding: 0; border-radius: 0; }
+.selo .leg { color: var(--preto); max-width: 18ch; }
+@media (max-width: 820px) { .selo { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="barra" id="topo">
+  <div class="wrap topo">
+    <a class="marca" href="#topo"><img src="logo-aorubro.png" alt="AORUBRO" width="700" height="98"></a>
+  </div>
+</div>
+<header class="amarela">
+  <div class="wrap">
+    <div class="hero">
+      <div class="stack">
+        <p class="eyebrow">Black Friday AORUBRO</p>
+        <h1 class="display">A Black Friday que não acaba na primeira compra.</h1>
+        <p class="lead">Uma boa ideia puxa outra. E nesta Black Friday, ainda traz 15% de volta.</p>
+        <div class="acoes">
+          <a class="btn" href="#contacto">Quero os meus 15%</a>
+        </div>
+      </div>
+      <div class="selo" aria-label="15% de volta em crédito">
+        <span class="num">15%</span>
+        <span class="leg">em crédito para o próximo serviço</span>
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="fita" aria-hidden="true">
+  <div class="fita-in">
+    <span>Uma boa ideia puxa outra <b>·</b> 15% de cashback <b>·</b> Outdoor <b>·</b> Redes Sociais <b>·</b> Website <b>·</b> Branding <b>·</b> Ads <b>·</b> Fotografia e Vídeo <b>·</b></span>
+    <span>Uma boa ideia puxa outra <b>·</b> 15% de cashback <b>·</b> Outdoor <b>·</b> Redes Sociais <b>·</b> Website <b>·</b> Branding <b>·</b> Ads <b>·</b> Fotografia e Vídeo <b>·</b></span>
+  </div>
+</div>
+
+<main>
+  <section class="band">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow amarelo-txt">Como funciona</p>
+        <h2 class="display">O primeiro projeto traz uma vantagem para o próximo.</h2>
+      </div>
+      <ol class="passos">
+        <li><span class="n">1</span><div class="stack" style="gap:8px"><h3>Contrate um serviço</h3><p class="muted">Qualquer serviço AORUBRO conta.</p></div></li>
+        <li><span class="n">2</span><div class="stack" style="gap:8px"><h3>Receba 15% em crédito</h3><p class="muted">15% do valor contratado fica como saldo. É crédito para abater a uma contratação futura, não um serviço grátis.</p></div></li>
+        <li><span class="n">3</span><div class="stack" style="gap:8px"><h3>Use no passo seguinte</h3><p class="muted">Tem 6 meses para o aplicar em qualquer outro serviço da agência.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band carvao" id="combinacoes">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow amarelo-txt">Sugestões · Uma boa ideia puxa outra</p>
+        <h2 class="display">Algumas sugestões para o seu próximo passo.</h2>
+        <p class="aviso-sug">São apenas sugestões, não pacotes fechados. O crédito é seu para usar onde fizer mais sentido.</p>
+      </div>
+      <div class="combos">
+        <div class="stack" style="gap:12px">
+          <p class="eyebrow muted">Se começar por</p>
+          <div class="tabs" role="tablist" aria-label="Primeiro serviço" id="tabs"></div>
+        </div>
+        <div class="painel" role="tabpanel" id="painel" aria-live="polite">
+          <div class="stack" style="gap:8px">
+            <p class="eyebrow muted">Sugestão</p>
+            <p class="display nome" id="p-de">Outdoor</p>
+          </div>
+          <p class="ponte">15% de cashback para…</p>
+          <div class="stack" style="gap:8px">
+            <p class="display nome amarelo-txt" id="p-para">Gestão de Redes Sociais</p>
+          </div>
+          <div class="frases">
+            <p class="muted" id="p-tag">Da visibilidade na rua à presença digital.</p>
+          </div>
+          <div class="rodape">
+            <a class="btn inv" href="#contacto" id="p-cta">Começar por aqui</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band amarela" id="contacto">
+    <div class="wrap fecho">
+      <div class="stack">
+        <p class="eyebrow">Black Friday AORUBRO</p>
+        <h2 class="display">O primeiro passo é seu. O próximo vem com 15% de cashback.</h2>
+        <p class="pergunta">Qual vai ser o próximo passo da sua marca?</p>
+      </div>
+      <div>
+        <form id="form" novalidate>
+          <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+          <div class="campo"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
+          <div class="campo full"><label for="f-servico">Por onde quer começar?</label>
+            <select id="f-servico" name="servico">
+              <option value="">Ainda não sei</option>
+            </select>
+          </div>
+          <div class="campo full"><label for="f-msg">Fale-nos do seu projeto</label><textarea id="f-msg" name="mensagem"></textarea></div>
+          <p class="peq campo full" id="f-erro" role="alert" hidden>Indique o seu nome para sabermos com quem falamos.</p>
+          <a class="btn inv full" id="f-enviar" href="https://wa.me/351911100707" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <p class="peq full">Abre o WhatsApp com a mensagem já escrita. Só tem de carregar em enviar. Também pode escrever-nos para o <span class="nowrap">+351 911 100 707</span>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="fixa" id="fixa"><a class="btn inv" href="#contacto">Pedir proposta no WhatsApp</a></div>
+
+<footer>
+  <div class="wrap">
+    <span>AORUBRO · Agência de comunicação 360.º</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var combos = [
+    { de: "Outdoor", para: "Gestão de Redes Sociais", f1: "Contrate publicidade outdoor.", f2: "E aproveite o cashback na gestão das suas redes sociais.", tag: "Da visibilidade na rua à presença digital." },
+    { de: "Gestão de Redes Sociais", para: "Sessão fotográfica ou vídeo", f1: "Invista na gestão das suas redes sociais.", f2: "E utilize o cashback numa sessão fotográfica ou num vídeo para o seu negócio.", tag: "Mais conteúdo para continuar a comunicar." },
+    { de: "Website", para: "Meta Ads ou Google Ads", f1: "Crie um novo website.", f2: "E use o cashback para investir em publicidade digital.", tag: "Uma presença online preparada para receber visitantes." },
+    { de: "Branding", para: "Design de materiais de comunicação", f1: "Renove a identidade da sua marca.", f2: "E aproveite o cashback em materiais de comunicação.", tag: "Uma nova imagem, aplicada em diferentes pontos de contacto." },
+    { de: "Meta Ads", para: "Criação de conteúdos para anúncios", f1: "Invista em campanhas Meta Ads.", f2: "E use o cashback na criação de conteúdos para os seus anúncios.", tag: "Campanhas com criativos à altura do investimento." },
+    { de: "Carrinha LED", para: "Publicidade outdoor", f1: "Leve a sua mensagem para a rua com a carrinha LED.", f2: "E aproveite o cashback em publicidade outdoor.", tag: "Da mensagem em movimento à presença fixa na rua." },
+    { de: "Criação de Conteúdo", para: "Gestão de Redes Sociais", f1: "Encomende conteúdos para a sua marca.", f2: "E utilize o cashback na gestão das suas redes sociais.", tag: "Bom conteúdo, publicado com estratégia e regularidade." },
+    { de: "Rebranding", para: "Desenvolvimento de website", f1: "Reposicione a sua marca com um rebranding.", f2: "E use o cashback no desenvolvimento do novo website.", tag: "Uma marca renovada, com uma casa nova online." }
+  ];
+  var $ = function (id) { return document.getElementById(id); };
+  var tabs = $("tabs"), sel = $("f-servico"), atual = 0;
+
+  combos.forEach(function (c, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "tab"; b.id = "tab-" + i;
+    b.setAttribute("role", "tab"); b.setAttribute("aria-controls", "painel");
+    b.textContent = c.de;
+    b.addEventListener("click", function () { mostrar(i); });
+    tabs.appendChild(b);
+    var o = document.createElement("option"); o.value = c.de; o.textContent = c.de; sel.appendChild(o);
+  });
+  ["Fotografia e Vídeo", "Google Ads", "Design de materiais de comunicação"].forEach(function (s) {
+    var o = document.createElement("option"); o.value = s; o.textContent = s; sel.appendChild(o);
+  });
+
+  function mostrar(i) {
+    atual = i; var c = combos[i];
+    Array.prototype.forEach.call(tabs.children, function (b, j) {
+      b.setAttribute("aria-selected", j === i ? "true" : "false");
+      b.tabIndex = j === i ? 0 : -1;
+    });
+    $("painel").setAttribute("aria-labelledby", "tab-" + i);
+    $("p-de").textContent = c.de; $("p-para").textContent = c.para;
+    $("p-tag").textContent = c.tag;
+  }
+  tabs.addEventListener("keydown", function (e) {
+    var d = (e.key === "ArrowDown" || e.key === "ArrowRight") ? 1 : (e.key === "ArrowUp" || e.key === "ArrowLeft") ? -1 : 0;
+    if (!d) return;
+    e.preventDefault();
+    var n = (atual + d + combos.length) % combos.length;
+    mostrar(n); tabs.children[n].focus();
+  });
+  mostrar(0);
+
+  $("p-cta").addEventListener("click", function () { sel.value = combos[atual].de; });
+
+  var WA = "351911100707", form = $("form"), enviar = $("f-enviar");
+  function ligacao() {
+    var nome = $("f-nome").value.trim(), emp = $("f-empresa").value.trim(), msg = $("f-msg").value.trim();
+    var l = ["Olá AORUBRO! Quero saber mais sobre a Black Friday (15% de cashback)."];
+    if (nome) l.push("Nome: " + nome);
+    if (emp) l.push("Empresa: " + emp);
+    l.push("Quero começar por: " + (sel.value || "ainda não sei, quero aconselhamento"));
+    if (msg) l.push("Projeto: " + msg);
+    enviar.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(l.join("\n"));
+  }
+  form.addEventListener("input", ligacao);
+  form.addEventListener("change", ligacao);
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  enviar.addEventListener("click", function (e) {
+    ligacao();
+    if (!$("f-nome").value.trim()) { e.preventDefault(); $("f-erro").hidden = false; $("f-nome").focus(); return; }
+    $("f-erro").hidden = true;
+  });
+  $("p-cta").addEventListener("click", ligacao);
+  ligacao();
+
+  var fixa = $("fixa");
+  if ("IntersectionObserver" in window) {
+    var vis = {};
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { vis[x.target.id || "capa"] = x.isIntersecting; });
+      fixa.hidden = !!(vis.capa || vis.contacto);
+    }, { threshold: 0.05 });
+    fixa.hidden = true;
+    io.observe($("contacto")); io.observe(document.querySelector("header"));
+  }
+})();
+</script>
+
+</body>
+</html>
