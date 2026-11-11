@@ -325,8 +325,8 @@ footer { border-top: 1px solid var(--linha); padding-top: 32px; }
         </div>
         <div class="campo full"><label for="f-msg">Fale-nos do seu projeto</label><textarea id="f-msg" name="mensagem"></textarea></div>
         <p class="peq full" id="f-erro" role="alert" hidden>Indique o seu nome para sabermos com quem falamos.</p>
-        <a class="btn full" id="f-enviar" href="https://wa.me/351911100707" target="_blank" rel="noopener">Enviar por WhatsApp <span class="seta" aria-hidden="true">→</span></a>
-        <p class="peq full">Abre o WhatsApp com a mensagem já escrita. Só tem de carregar em enviar. Se preferir email, escreva para <a href="mailto:geral@aorubro.pt">geral@aorubro.pt</a>.</p>
+        <a class="btn full" id="f-enviar" href="https://wa.me/351933583070" target="_blank" rel="noopener">Enviar por WhatsApp <span class="seta" aria-hidden="true">→</span></a>
+        <p class="peq full">Abre o WhatsApp com a mensagem já escrita. Só tem de carregar em enviar. Se preferir email, escreva para <a id="f-mail" href="mailto:comercial@aorubro.pt">comercial@aorubro.pt</a>.</p>
       </form>
     </div>
   </section>
@@ -390,7 +390,21 @@ footer { border-top: 1px solid var(--linha); padding-top: 32px; }
   });
   mostrar(0, false);
 
-  var WA = "351911100707", form = $("form"), enviar = $("f-enviar");
+  // Referência do vendedor: vem no link (?sales=nome) e fica guardada neste browser para visitas seguintes
+  var ref = "";
+  try {
+    var m = /[?&]sales=([^&#]*)/.exec(location.search);
+    if (m) ref = decodeURIComponent(m[1].replace(/\+/g, " "));
+  } catch (e) {}
+  ref = ref.toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+  try {
+    if (ref) localStorage.setItem("aorubro-bf-ref", ref);
+    else ref = (localStorage.getItem("aorubro-bf-ref") || "").replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+  } catch (e) {}
+  var mail = $("f-mail");
+  if (mail && ref) mail.href = "mailto:comercial@aorubro.pt?subject=" + encodeURIComponent("Black Friday AORUBRO (Referência: " + ref + ")");
+
+  var WA = "351933583070", form = $("form"), enviar = $("f-enviar");
   function ligacao() {
     var nome = $("f-nome").value.trim(), emp = $("f-empresa").value.trim(), msg = $("f-msg").value.trim();
     var l = ["Olá AORUBRO! Quero saber mais sobre a Black Friday (15% de cashback)."];
@@ -398,6 +412,7 @@ footer { border-top: 1px solid var(--linha); padding-top: 32px; }
     if (emp) l.push("Empresa: " + emp);
     l.push("Quero começar por: " + (sel.value || "ainda não sei, quero aconselhamento"));
     if (msg) l.push("Projeto: " + msg);
+    if (ref) l.push("Referência: " + ref);
     enviar.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(l.join("\n"));
   }
   form.addEventListener("input", ligacao);
